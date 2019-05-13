@@ -1,0 +1,4 @@
+1;gato;animal
+2;celular;objeto
+3;casa;seguranca
+4;orelha;corpo humano
