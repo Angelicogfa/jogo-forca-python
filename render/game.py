@@ -29,7 +29,7 @@ class game:
     def existe_jogadas_disponiveis(self):
         return not (self.__render__.fim_de_jogo() or len(self.__palavra__) == len(self.__acertos__))
 
-    def __formatar_campo__(self):
+    def __formatar_campo__(self) -> []:
         caracteres = []
 
         for caracter in self.__palavra__:
@@ -39,6 +39,16 @@ class game:
                 caracteres.append(' __ ')
         
         return caracteres
+    
+    def ganhou_jogo(self) -> bool:
+        ganhou = True
+        
+        for letra in self.__palavra__:
+            if letra not in self.__acertos__:
+                ganhou = False
+                break
+        
+        return ganhou
 
     def __str__(self):
         os.system('cls')       
